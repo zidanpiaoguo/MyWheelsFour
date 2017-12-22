@@ -56,4 +56,5 @@ ext{
 
     BaseRecyclerViewAdapterHelperVersion = '2.9.31'
 
+    EasypermissionsVersion = '1.1.1'
 }

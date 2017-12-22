@@ -7,6 +7,7 @@ package com.example.lzy.sdk.base;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.Window;
@@ -15,7 +16,10 @@ import android.view.WindowManager;
 import com.example.lzy.sdk.utils.StatusBarUtil;
 import com.example.lzy.sdk.app.ActivityCollector;
 
+import pub.devrel.easypermissions.EasyPermissions;
+
 /**
+ * 基础Activity
  * Created by bullet on 2017/12/16.
  */
 
@@ -40,6 +44,7 @@ public abstract class BaseActivity extends FragmentActivity {
         setClickEvent();
 
         ActivityCollector.getAcitivityCollector().addActivty(this);
+
     }
 
     protected abstract int setLayoutId();
@@ -60,8 +65,19 @@ public abstract class BaseActivity extends FragmentActivity {
         if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT){
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
+
         super.onResume();
 
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        //使用的 EasyPermissions
+
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
     @Override

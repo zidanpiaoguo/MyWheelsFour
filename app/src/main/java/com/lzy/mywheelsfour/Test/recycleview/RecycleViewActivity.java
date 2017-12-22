@@ -47,16 +47,6 @@ public class RecycleViewActivity extends BaseActivity {
     protected void initData() {
 
        View view = LayoutInflater.from(this).inflate(R.layout.view_error,null);
-//        //设置RelativeLayout布局的宽高
-//        LinearLayout.LayoutParams relLayoutParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//
-//        main.addView(view,relLayoutParams);
-//
-//        TextView tv = new TextView(this);
-//        tv.setText("翁山豆根士大夫士大夫");
-//
-//        main.addView(tv,relLayoutParams);
-
 
         List<View> views = new ArrayList<>();
         views.add(view);

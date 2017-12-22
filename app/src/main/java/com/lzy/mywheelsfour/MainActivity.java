@@ -5,13 +5,12 @@
 package com.lzy.mywheelsfour;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.lzy.sdk.widgets.CountDownTimerView;
-import com.lzy.mywheelsfour.utils.timeTextView.CountDownTimerUtil;
+
 
 
 public class MainActivity extends AppCompatActivity {

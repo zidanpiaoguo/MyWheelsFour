@@ -66,5 +66,6 @@ dependencies {
     //BaseRecyclerViewAdapterHelper
     compile "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelperVersion"
 
-
+    //permissions
+    compile "pub.devrel:easypermissions:$rootProject.EasypermissionsVersion"
 }
