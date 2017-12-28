@@ -91,6 +91,7 @@ public class SplashActivity extends BaseActivity  implements EasyPermissions.Per
             EasyPermissions.requestPermissions(this, "相机和写权限",
                     RC_CAMERA_AND_WRITE, perms);
         }
+
     }
 
     @AfterPermissionGranted(RC_READ)
@@ -105,10 +106,6 @@ public class SplashActivity extends BaseActivity  implements EasyPermissions.Per
 
         }
     }
-
-
-
-
 
 
 

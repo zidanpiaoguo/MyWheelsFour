@@ -35,8 +35,9 @@ import java.security.MessageDigest;
 public class ImageUtils {
 
     /**
-     * 加载普通图片
+     * 根据URl 加载图片
      *
+     * @param context
      * @param url
      * @param imageView
      */
@@ -50,6 +51,41 @@ public class ImageUtils {
                 .into(imageView);
     }
 
+
+    /**
+     * 根据资源ID 加载图片
+     *
+     * @param context
+     * @param resourceId 图片id
+     * @param target view
+     * @param defaultId 加载图片id
+     */
+    public static void loadBasicImg(Context context, int resourceId, ImageView target, int defaultId) {
+        GlideApp.with(context)
+                .load(resourceId)
+                .placeholder(defaultId)
+                .transition(new DrawableTransitionOptions().crossFade(200))
+                .centerCrop()
+                .into(target);
+    }
+
+    /**
+     * 根据图片路径 加载图片
+     *
+     * @param context
+     * @param imgFile 图片id
+     * @param target  view
+     * @param defaultId  加载图片id
+     */
+    public static void loadBasicImg(Context context, File imgFile, ImageView target, int defaultId) {
+        GlideApp.with(context)
+                .load(imgFile)
+                .placeholder(defaultId)
+                .transition(new DrawableTransitionOptions().crossFade(200))
+                .centerCrop()
+                .into(target);
+    }
+
     /**
      * 加载圆形图片
      *
@@ -60,6 +96,20 @@ public class ImageUtils {
     public static void loadCircleImg(Context context, String imgPath, ImageView iv) {
         GlideApp.with(context)
                 .load(imgPath)
+                .transform(new CircleCrop())
+                .into(iv);
+    }
+
+    /**
+     * 加载资源id ，圆形图片
+     *
+     * @param context
+     * @param resourceId 资源id
+     * @param iv
+     */
+    public static void loadCircleImg(Context context, int resourceId, ImageView iv) {
+        GlideApp.with(context)
+                .load(resourceId)
                 .transform(new CircleCrop())
                 .into(iv);
     }
@@ -102,15 +152,24 @@ public class ImageUtils {
     }
 
 
-
+    /**
+     * 加载Gif本地资源为一张静态图片
+     *
+     * @param context
+     *
+     * @param IdResource 本地资源id
+     */
+    public static void loadGifImg(Context context, int IdResource, ImageView imageView) {
+        GlideApp.with(context).load(IdResource).into(imageView);
+    }
 
 
     /**
      * 圆形加载带边框
      *
      * @param mContext
-     * @param path
-     * @param imageView
+     * @param path url
+     * @param imageView view
      * @param borderWidth  边框的宽度
      * @param colorId 边框的颜色
      */
@@ -124,7 +183,19 @@ public class ImageUtils {
     }
 
 
-
+    /**
+     * 圆形加载带边框
+     *
+     * @param mContext
+     * @param path
+     * @param imageview
+     */
+    public static void loadFrameImg(Context mContext, int path, ImageView imageview) {
+        GlideApp.with(mContext).asBitmap().load(path).centerCrop()
+                .transform(new GlideCircleTransform(mContext, 4, mContext.getResources().getColor(R.color.blue)))
+                .diskCacheStrategy(DiskCacheStrategy.DATA)
+                .into(imageview);
+    }
 
     /**
      * 加载图片不需要缓存的
@@ -144,50 +215,7 @@ public class ImageUtils {
     }
 
 
-    /**
-     * 根据资源ID加载图片
-     *
-     * @param c
-     * @param resourceId
-     * @param target
-     * @param defaultId
-     */
-    public static void loadResourseImg(Context c, int resourceId, ImageView target, int defaultId) {
-        GlideApp.with(c)
-                .load(resourceId)
-                .placeholder(defaultId)
-                .transition(new DrawableTransitionOptions().crossFade(200))
-                .centerCrop()
-                .into(target);
-    }
 
-    /**
-     * 根据图片路径加载图片
-     *
-     * @param c
-     * @param imgFile
-     * @param target
-     * @param defaultId
-     */
-    public static void loadFileImg(Context c, File imgFile, ImageView target, int defaultId) {
-        GlideApp.with(c)
-                .load(imgFile)
-                .placeholder(defaultId)
-                .transition(new DrawableTransitionOptions().crossFade(200))
-                .centerCrop()
-                .into(target);
-    }
-
-
-    /**
-     * 加载Gif本地资源为一张静态图片
-     *
-     * @param context
-     * @param IdResource
-     */
-    public static void loadGifBitmapFromId(Context context, int IdResource, ImageView imageView) {
-        GlideApp.with(context).load(IdResource).into(imageView);
-    }
 
 
     /**
@@ -221,19 +249,7 @@ public class ImageUtils {
 
 
 
-    /**
-     * 圆形加载带边框
-     *
-     * @param mContext
-     * @param path
-     * @param imageview
-     */
-    public static void loadFrameImage(Context mContext, int path, ImageView imageview) {
-        GlideApp.with(mContext).asBitmap().load(path).centerCrop()
-                .transform(new GlideCircleTransform(mContext, 4, mContext.getResources().getColor(R.color.blue)))
-                .diskCacheStrategy(DiskCacheStrategy.DATA)
-                .into(imageview);
-    }
+
 
 
 

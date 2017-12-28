@@ -7,7 +7,14 @@ package com.example.lzy.sdk.config;
 public class SPConfig {
 
 
-    public static final String FIRST_OPEN = "user_info_is_first";//是否第一次启动
+    public static final String SP_NAME_1 = "config";
+
+    public static final String SP_NAME_2 = "config2";
+
+
+    public static final String FIRST_OPEN = "first_open";//是否第一次启动
+
+    public static final String IS_LOGIN = "is_login"; //是否已经登陆
 
     public static final String USER_ID = "user_id";
 

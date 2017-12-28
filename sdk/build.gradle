@@ -68,4 +68,8 @@ dependencies {
 
     //permissions
     compile "pub.devrel:easypermissions:$rootProject.EasypermissionsVersion"
+
+
+    //AgentWeb
+    compile "com.just.agentweb:agentweb:$rootProject.AgentWebVersion"
 }

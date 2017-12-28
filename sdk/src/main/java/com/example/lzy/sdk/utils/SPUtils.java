@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.lzy.sdk.app.GlobalApplication;
+import com.example.lzy.sdk.config.SPConfig;
 import com.google.gson.Gson;
 
 import java.io.ByteArrayInputStream;
@@ -21,12 +22,29 @@ import java.io.ObjectOutputStream;
 
 public class SPUtils {
 
-    public static String SP_NAME = "config";
+    public static String SP_NAME = SPConfig.SP_NAME_1;
     private static SharedPreferences sp;
     private static String serStr;
 
 
     private static Context context = GlobalApplication.getInstance().getApplicationContext();
+
+
+
+
+    /**
+     * 获取重新定义的SP,
+     *
+     * @return
+     */
+
+    public static SPUtils getSPUtils() {
+        SPUtils spUtils = new SPUtils();
+        if (sp == null) {
+            sp = context.getSharedPreferences(SPConfig.SP_NAME_2, Context.MODE_PRIVATE);
+        }
+        return spUtils;
+    }
 
 
     /**
@@ -37,7 +55,7 @@ public class SPUtils {
 
     public static SharedPreferences getSharedPreferences() {
         if (sp == null) {
-            sp = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
+            sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
         }
         return sp;
     }
