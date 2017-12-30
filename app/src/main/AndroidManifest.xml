@@ -21,31 +21,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ToolbarTest.TestAcitvity" />
-        <activity android:name=".Test.ProgressDialog.proDialogTest" />
-        <activity android:name=".Test.switchButton.switchButton" />
-        <activity android:name=".Test.ImageView.ImageAcitivity">
-
-        </activity>
-
-        <activity android:name=".Test.recycleview.RecycleViewActivity">
-
-
-
-        </activity>
-        <activity android:name=".Test.Coordinator.CoordinatorActivity">
-
-        </activity>
-
-        <activity android:name=".Test.Splash.SplashActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Test.Splash.GuideActivity">
+
+        <activity android:name=".test.ProgressDialog.proDialogTest" />
+        <activity android:name=".test.switchButton.switchButton" />
+        <activity android:name=".test.ImageView.ImageAcitivity">
+
+        </activity>
+
+        <activity android:name=".test.recycleview.RecycleViewActivity"/>
+
+        <activity android:name=".test.Coordinator.CoordinatorActivity">
+
+        </activity>
+
+        <activity android:name=".test.Splash.SplashActivity">
+
+        </activity>
+        <activity android:name=".test.Splash.GuideActivity">
+
+        </activity>
+
+
+        <activity android:name=".test.MVP.imageActivity">
 
         </activity>
     </application>

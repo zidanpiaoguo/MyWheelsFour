@@ -59,4 +59,8 @@ ext{
     EasypermissionsVersion = '1.1.1'
 
     AgentWebVersion ='3.0.0-rc'
+
+    EventbusVersion ='3.0.0'
+
+    FlycoTabLayoutVersion = '2.1.2@aar'
 }

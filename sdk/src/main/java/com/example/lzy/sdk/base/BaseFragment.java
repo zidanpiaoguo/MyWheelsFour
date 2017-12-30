@@ -20,6 +20,10 @@ public abstract class BaseFragment extends Fragment {
     protected View view;
 
 
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

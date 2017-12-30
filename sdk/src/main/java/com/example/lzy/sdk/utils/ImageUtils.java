@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.media.MediaMetadataRetriever;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
@@ -24,6 +25,7 @@ import com.example.lzy.sdk.R;
 
 import java.io.File;
 import java.security.MessageDigest;
+import java.util.HashMap;
 
 
 /**
@@ -196,6 +198,20 @@ public class ImageUtils {
                 .diskCacheStrategy(DiskCacheStrategy.DATA)
                 .into(imageview);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 加载图片不需要缓存的

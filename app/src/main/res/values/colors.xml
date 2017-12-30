@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="blue">#03d1ff</color>
     <color name="yellow">#ffd503</color>
+
+
+    <color name="divider_color">#DEDDDD</color>
+
 </resources>

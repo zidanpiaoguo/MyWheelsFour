@@ -72,4 +72,10 @@ dependencies {
 
     //AgentWeb
     compile "com.just.agentweb:agentweb:$rootProject.AgentWebVersion"
+
+    //eventbus
+    compile "org.greenrobot:eventbus:$rootProject.EventbusVersion"
+
+    //Tablayout
+    compile "com.flyco.tablayout:FlycoTabLayout_Lib:$rootProject.FlycoTabLayoutVersion"
 }
