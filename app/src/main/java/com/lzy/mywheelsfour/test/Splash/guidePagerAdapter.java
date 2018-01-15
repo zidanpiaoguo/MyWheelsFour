@@ -20,6 +20,7 @@ import java.util.List;
  */
 
 public class guidePagerAdapter extends PagerAdapter {
+
     private List<View> list = new ArrayList<>();
     private Activity activity;
     public guidePagerAdapter(Activity activity ,List<Integer> imgs) {
@@ -68,4 +69,6 @@ public class guidePagerAdapter extends PagerAdapter {
     public void destroyItem( ViewGroup container, int position,  Object object) {
         container.removeView(list.get(position));
     }
+
+
 }
