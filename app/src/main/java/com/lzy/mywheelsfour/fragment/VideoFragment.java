@@ -1,6 +1,9 @@
 package com.lzy.mywheelsfour.fragment;
 
+import android.widget.TextView;
+
 import com.example.lzy.sdk.base.BaseFragment;
+import com.lzy.mywheelsfour.R;
 
 /**
  * Created by bullet on 2017/12/29.
@@ -9,6 +12,7 @@ import com.example.lzy.sdk.base.BaseFragment;
 public class VideoFragment extends BaseFragment {
 
     private String mTitle;
+    private TextView tvFind;
 
     public static VideoFragment getInstance(String title){
         VideoFragment fragment =new  VideoFragment();
@@ -18,17 +22,19 @@ public class VideoFragment extends BaseFragment {
 
     @Override
     protected int setLayoutId() {
-        return 0;
+        return R.layout.fragment_video;
     }
 
     @Override
     protected void initView() {
 
+        tvFind = (TextView) view.findViewById(R.id.tv_find);
     }
 
     @Override
     protected void initData() {
 
+        tvFind.setText(mTitle);
     }
 
     @Override

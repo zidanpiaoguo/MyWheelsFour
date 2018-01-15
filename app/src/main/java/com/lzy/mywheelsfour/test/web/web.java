@@ -37,7 +37,7 @@ public class web extends BaseActivity{
                 .setReceivedTitleCallback(mCallback)
                 .createAgentWeb()
                 .ready()
-                .go("http://120.27.215.97:803/ppapp/#/home");
+                .go("http://www.baidu.com");
 
     }
 
