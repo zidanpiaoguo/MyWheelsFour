@@ -10,6 +10,7 @@ import android.media.MediaMetadataRetriever;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
@@ -26,6 +27,8 @@ import com.example.lzy.sdk.R;
 import java.io.File;
 import java.security.MessageDigest;
 import java.util.HashMap;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
 
 
 /**
@@ -220,6 +223,60 @@ public class ImageUtils {
                 .into(target);
     }
 
+
+//    /**
+//     * 显示网络虚化图片
+//     *
+//     * @param context   context
+//     * @param imgUrl    图片url
+//     * @param imageView 要显示的imageview
+//     */
+//    public static void displayBlurImg(Context context, final String imgUrl, ImageView imageView) {
+//        // "23":模糊度；"4":图片缩放4倍后再进行模糊
+//        GlideApp.with(context)
+//                .load(imgUrl)
+//                .error(R.drawable.img_error)
+//                .placeholder(R.drawable.img_placeholder)
+//                .crossFade(300)
+//                .bitmapTransform(new BlurTransformation(context, 23, 4))
+//                .into(imageView);
+//    }
+//
+//    /**
+//     * 显示本地虚化图片
+//     *
+//     * @param context   context
+//     * @param file      本地图片file
+//     * @param imageView 要显示的imageview
+//     */
+//    public static void displayBlurImg(Context context, File file, ImageView imageView) {
+//        // "23":模糊度；"4":图片缩放4倍后再进行模糊
+//        GlideApp.with(context)
+//                .load(file)
+//                .error(R.drawable.img_error)
+//                .placeholder(R.drawable.img_placeholder)
+//                .crossFade(300)
+//                .bitmapTransform(new BlurTransformation(context, 23, 4))
+//                .into(imageView);
+//    }
+//
+//    /**
+//     * 显示资源虚化图片
+//     *
+//     * @param context    context
+//     * @param resourceId 图片资源id
+//     * @param imageView  要显示的imageview
+//     */
+//    public static void displayBlurImg(Context context, Integer resourceId, ImageView imageView) {
+//        // "23":模糊度；"4":图片缩放4倍后再进行模糊
+//        Glide.with(context)
+//                .load(resourceId)
+//                .error(R.drawable.img_error)
+//                .placeholder(R.drawable.img_placeholder)
+//                .crossFade(300)
+//                .bitmapTransform(new BlurTransformation(context, 23, 4))
+//                .into(imageView);
+//    }
 
 
 
