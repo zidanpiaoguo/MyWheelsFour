@@ -2,6 +2,7 @@ package com.lzy.mywheelsfour.fragment;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -42,10 +43,6 @@ public class MineFragment extends BaseFragment {
     protected void initView() {
 
 
-
-
-
-
     }
 
     @Override
@@ -76,10 +73,19 @@ public class MineFragment extends BaseFragment {
 
 
 
+    @Override
+    protected void lazyLoadDate() {
+        super.lazyLoadDate();
+        Log.d("lazy", "lazyLoadDate:mine "+"进来了");
+    }
 
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.d("lazy", "lazyLoadDate:mine "+"显示了"+hidden);
 
-
+    }
 
 
 

@@ -46,13 +46,26 @@ public abstract class BaseActivity extends FragmentActivity {
 
     }
 
+    /**
+     * 初始化布局文件
+     * @return
+     */
     protected abstract int setLayoutId();
 
 
+    /**
+     * 初始化控件
+     */
     protected abstract void initView();
 
+    /**
+     * 初始化数据
+     */
     protected abstract void initData();
 
+    /**
+     * 设置监听事件
+     */
     protected abstract void setClickEvent();
 
 

@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+    }
     buildToolsVersion '26.0.2'
 }
 
@@ -30,4 +33,5 @@ dependencies {
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     compile "com.github.chrisbanes:PhotoView:$rootProject.photoViewVersion"
     compile project(':sdk')
+    implementation project(':mvpsdk')
 }

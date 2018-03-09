@@ -2,16 +2,14 @@ package com.lzy.mywheelsfour.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.widget.Adapter;
-import android.widget.TextView;
+import android.util.Log;
 
 import com.example.lzy.sdk.adapter.TabAdapter;
 import com.example.lzy.sdk.base.BaseFragment;
 import com.flyco.tablayout.SegmentTabLayout;
-import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.lzy.mywheelsfour.R;
-import com.lzy.mywheelsfour.test.Splash.guidePagerAdapter;
+import com.lzy.mywheelsfour.fragment.home.HomeFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,10 +51,11 @@ public class FindFragment extends BaseFragment {
     @Override
     protected void initData() {
 
-        for (int i = 0; i < 4; i++) {
-            HomeFragment fragment = HomeFragment.getInstance("发现");
-            listfragment.add(fragment);
-        }
+
+        listfragment.add(HomeFragment.getInstance("首页"));
+        listfragment.add(HomeFragment.getInstance("消息"));
+        listfragment.add(HomeFragment.getInstance("联系人"));
+        listfragment.add(HomeFragment.getInstance("更多"));
 
         titlelist.add("测试");
         titlelist.add("不是");
@@ -94,12 +93,28 @@ public class FindFragment extends BaseFragment {
 
             }
         });
-        findViewpager.setCurrentItem(1);
+
+        findViewpager.setCurrentItem(0);
+
 
     }
 
     @Override
     protected void setClickEvent() {
+
+    }
+
+
+    @Override
+    protected void lazyLoadDate() {
+        super.lazyLoadDate();
+        Log.d("lazy", "lazyLoadDate:find "+"进来了");
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.d("lazy", "lazyLoadDate:find "+"显示了"+hidden);
 
     }
 }
